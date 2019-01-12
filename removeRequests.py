@@ -47,7 +47,7 @@ for i in range(num):
         elem = sentButtons[i]
         ActionChains(browser).move_to_element(elem).perform()
         time.sleep(0.5)
-        elem = browser.find_element_by_css_selector('.uiMenuItem.FriendListCancel')
+        elem = WebDriverWait(browser, 2.5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.uiMenuItem.FriendListCancel'))
         ActionChains(browser).move_to_element(elem).click().perform()
         elem = WebDriverWait(browser, 2.5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, '._42ft._42fu.layerConfirm.uiOverlayButton.selected._42g-._42gy')))
         elem.click()
