@@ -1,3 +1,0 @@
-email@email.com
-password
-~ number of friend requests (can be higher, but not lower)
