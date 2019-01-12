@@ -29,7 +29,7 @@ elem.send_keys(f[1] + Keys.ENTER)
 num = ceil((int(f[2])) / 10) + 1
 while (num is not 0):
     try:
-        elem = WebDriverWait(browser, 2.5).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="js_36"]')))
+        elem = WebDriverWait(browser, 2.5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.pam.uiBoxLightblue._5cz.uiMorePagerPrimary')))
         elem.click()
         num -= 1
     except:
@@ -38,8 +38,8 @@ while (num is not 0):
 
 
 browser.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.HOME)
-num = int(f[2])
 sentButtons = browser.find_elements(By.CSS_SELECTOR, '._42ft._4jy0.FriendRequestOutgoing.enableFriendListFlyout.outgoingButton.enableFriendListFlyout._4jy3._517h._51sy')
+num = len(sentButtons)
 
 for i in range(num):
     try:
